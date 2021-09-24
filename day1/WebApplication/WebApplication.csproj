@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <UserSecretsId>1c963968-6751-4447-b153-36e0e34e72b4</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="idunno.Authentication.Basic" Version="2.2.2" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.9" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.9">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.9" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.1" />
+        <PackageReference Include="Grpc.AspNetCore" Version="2.39.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Protobuf Include="..\Proto\*.proto" Link="Protos\%(Filename)%(Extension)" GrpService="Server" />
+    </ItemGroup>
+</Project>
